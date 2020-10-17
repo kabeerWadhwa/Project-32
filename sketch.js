@@ -4,11 +4,12 @@ const Bodies = Matter.Bodies
 const Constraint = Matter.Constraint
 
 var ground1
+var score = 0;
 function setup() {
   createCanvas(800,600);
   engine = Engine.create();
   world = engine.world;
-  text("Score:"+score,750,40)
+
   ground1 = new ground(400,580,800,20);
   polygon1 = new Polygon(220,60,20);
   block1 = new box(120,400,30,40);
@@ -49,6 +50,7 @@ function setup() {
 function draw() {
   background(255,255,255);  
   Engine.update(engine)
+  text("Score:"+score,750,40)
   ground1.display()
   block1.display()
   block2.display()
